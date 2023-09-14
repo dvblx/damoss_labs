@@ -1,6 +1,6 @@
 package models;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class Company {
@@ -11,7 +11,7 @@ public class Company {
     private String nameFull;
     private String nameShort;
     private int numberReg;
-    private Date dateRegistered;
+    private LocalDate dateRegistered;
 
     public UUID getId() {return id;}
 
@@ -41,7 +41,24 @@ public class Company {
 
     public void setNumberReg(int numberReg) {this.numberReg = numberReg;}
 
-    public Date getDateRegistered() {return dateRegistered;}
+    public LocalDate getDateRegistered() {return dateRegistered;}
 
-    public void setDateRegistered(Date dateRegistered) {this.dateRegistered = dateRegistered;}
+    public void setDateRegistered(LocalDate dateRegistered) {this.dateRegistered = dateRegistered;}
+
+    public Company(UUID id, OrgLegForm orgLegForm, OrgRegistration orgRegistration, String nameFull, String nameShort, int numberReg, LocalDate dateRegistered) {
+        this.id = id;
+        this.orgLegForm = orgLegForm;
+        this.orgRegistration = orgRegistration;
+        this.nameFull = nameFull;
+        this.nameShort = nameShort;
+        this.numberReg = numberReg;
+        this.dateRegistered = dateRegistered;
+    }
+    public Company(UUID id, String nameFull, String nameShort, int numberReg, LocalDate dateRegistered) {
+        this.id = id;
+        this.nameFull = nameFull;
+        this.nameShort = nameShort;
+        this.numberReg = numberReg;
+        this.dateRegistered = dateRegistered;
+    }
 }

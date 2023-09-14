@@ -1,8 +1,6 @@
 package models;
 
-import models.ClientType;
-
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class Person {
@@ -10,7 +8,7 @@ public class Person {
     private UUID cipher;
     private int ITN;
     private ClientType clientType;
-    private Date dateRegistered;
+    private LocalDate dateRegistered;
 
     public UUID getId() {return id;}
 
@@ -28,7 +26,15 @@ public class Person {
 
     public void setClientType(ClientType clientType) {this.clientType = clientType;}
 
-    public Date getDateRegistered() {return dateRegistered;}
+    public LocalDate getDateRegistered() {return dateRegistered;}
 
-    public void setDateRegistered(Date dateRegistered) {this.dateRegistered = dateRegistered;}
+    public void setDateRegistered(LocalDate dateRegistered) {this.dateRegistered = dateRegistered;}
+
+    public Person(UUID id, UUID cipher, int ITN, ClientType clientType, LocalDate dateRegistered) {
+        this.id = id;
+        this.cipher = cipher;
+        this.ITN = ITN;
+        this.clientType = clientType;
+        this.dateRegistered = dateRegistered;
+    }
 }
