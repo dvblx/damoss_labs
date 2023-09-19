@@ -1,8 +1,8 @@
 package Lab1;
 
-import models.ClientType;
-import models.Company;
-import models.Person;
+import Models.LegalEntities.ClientType;
+import Models.LegalEntities.Company;
+import Models.LegalEntities.Person;
 
 import java.time.LocalDate;
 import java.util.UUID;
