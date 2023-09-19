@@ -1,4 +1,4 @@
-package models;
+package Models.LegalEntities;
 
 public enum ClientType {
     individualPerson,

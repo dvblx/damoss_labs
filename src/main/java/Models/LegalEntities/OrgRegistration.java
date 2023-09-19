@@ -1,8 +1,8 @@
-package models;
+package Models.LegalEntities;
 
 import java.util.UUID;
 
-public class OrgLegForm {
+public class OrgRegistration {
     private UUID id;
     private String nameFull;
     private String nameShort;

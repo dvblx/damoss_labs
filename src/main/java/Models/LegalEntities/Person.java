@@ -1,4 +1,4 @@
-package models;
+package Models.LegalEntities;
 
 import java.time.LocalDate;
 import java.util.UUID;
