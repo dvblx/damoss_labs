@@ -1,4 +1,4 @@
-package Lab2;
+package Lab2.IndividualTask;
 
 import Models.LegalEntities.ClientType;
 import Models.LegalEntities.Company;

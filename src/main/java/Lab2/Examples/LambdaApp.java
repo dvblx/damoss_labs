@@ -1,4 +1,4 @@
-package Lab2;
+package Lab2.Examples;
 
 public class LambdaApp {
 
@@ -34,6 +34,11 @@ public class LambdaApp {
         Printable printer = s->System.out.println(s);
         printer.print("Hello Java!");
 
+        OperationableGeneric<Integer> operationableGeneric1 = (x, y)-> x + y;
+        OperationableGeneric<String> operationableGeneric2 = (x, y) -> x + y;
+        System.out.println(operationableGeneric1.calculate(20, 10)); //30
+        System.out.println(operationableGeneric2.calculate("20", "10")); //2010
+
 
         Operation operation = ()->{
             x=30;
@@ -51,8 +56,8 @@ public class LambdaApp {
         System.out.println(operation4.calculate(20, 0)); //0
 
         int[] nums = { -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5};
-        ExpressionHelper exprHelper = new ExpressionHelper();
-        System.out.println(sum(nums, exprHelper::isEven)); // 0
+        // ExpressionHelper exprHelper = new ExpressionHelper();
+        System.out.println(sum(nums, ExpressionHelper::isEven)); // 0
 
         UserBuilder userBuilder = User::new;
         User user = userBuilder.create("Tom");
@@ -79,12 +84,12 @@ public class LambdaApp {
     }
 
     private static Operation2 action(int number){
-        switch(number){
-            case 1: return (x, y) -> x + y;
-            case 2: return (x, y) -> x - y;
-            case 3: return (x, y) -> x * y;
-            default: return (x,y) -> 0;
-        }
+        return switch (number) {
+            case 1 -> (x, y) -> x + y;
+            case 2 -> (x, y) -> x - y;
+            case 3 -> (x, y) -> x * y;
+            default -> (x, y) -> 0;
+        };
     }
 }
 

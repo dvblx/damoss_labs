@@ -1,4 +1,4 @@
-package Lab2;
+package Lab2.Examples;
 
 public interface Operation {
     int calculate();
